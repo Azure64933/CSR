@@ -50,7 +50,7 @@ def third_Seg(fileContent, fileName):
     for i in content:
         # count 為句子內 "." 的數量(超過6個......就刪掉)
         count = len(re.findall('\.', i))
-        if (i.endswith("。") or i.endswith("。\n") or i.endswith("。 \n")) and len(i) > 12 and count < 4:
+        if (i.endswith("。") or i.endswith("。\n") or i.endswith("。 \n")) and len(i) > 12 and count < 7:
             i = deal_string.del_space(i)
             if "。" in i:
                 # 每個句號加換行(會多出許多不必要的空行，將其全數刪除)

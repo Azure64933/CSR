@@ -1,5 +1,5 @@
-import os
-import re
+import os, re
+import pandas as pd
 from cogs import segment, combine, merge, deal_string
 from pathlib import Path
 
@@ -61,6 +61,5 @@ def test5(str):
 
     return new_s
 
-# print(test5("的 發 行，以 透 明 string in space\n  test in space測試拉"))
+print(test5("的 發 行，以 透 明 string in space\n  test in space測試拉"))
 
-test3()

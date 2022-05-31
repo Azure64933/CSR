@@ -1,7 +1,14 @@
-# 忽略 test.py 檔案
-test.py
+# 忽略 ignore_test.py 檔案
+ignore_test.py
 
-# 忽略 0523.txt 檔案
+# 忽略 0406.py 檔案
+0406.py
+
+# 忽略 0523.txt(測試txt檔) 檔案
 0523.txt
 
-ignore_test.py
+#執行錯誤時會跑出來的檔案
+tempCodeRunnerFile.py
+
+#轉換率結果
+Conversion_ratio.xlsx

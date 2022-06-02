@@ -68,7 +68,8 @@ def del_space(str):
     lst = s.split(' ')
     new_s = ''
     for x in lst:
-        if x.encode('UTF-8').isalpha() or x.isdigit():
+        # 只判斷該字串最後一個字元是否為英文，是英文的話就用空格接起
+        if x[-1:].encode('UTF-8').isalpha() or x[-1:].isdigit():
             new_s += x
             new_s += " "
         else:

@@ -34,12 +34,12 @@ def openFile(file, mode):
         # mode1 為 comb, mode2 為 seg
         if fileName.endswith(".txt") and mode == 1:
             with open(os.path.join(file, fileName), 'r') as f:
-                word = combine.forth_Comb(f.readlines(), fileName)
+                word = combine.fifth_Comb(f.readlines(), fileName)
                 comb_word.append(word)
 
         elif fileName.endswith(".txt") and mode == 2:
             with open(os.path.join(file, fileName), 'r') as f:
-                word = segment.third_Seg(f.readlines(), fileName)
+                word = segment.fifth_Seg(f.readlines(), fileName)
                 seg_word.append(word)
 
         elif fileName.endswith(".txt") and mode == 0:
@@ -59,4 +59,4 @@ print(original_name)
 print(original_word)
 print(comb_word)
 print(seg_word)
-Export.excel_export(original_name, cal_list(original_word, comb_word), cal_list(original_word, seg_word))
+Export.excel_export(original_name, cal_list(original_word, comb_word), cal_list(original_word, seg_word), cal_list(comb_word, seg_word))

@@ -8,7 +8,7 @@
 此專案將各個企業的"企業社會責任報告書"轉成Combine以及Segment兩個部分。
 
 
-## Getting started
+##<h2> Getting started
 
 將code clone之後，執行main便會將`CSR_TXT_TEST`中所有的TXT檔案進行轉換。(之所以會是`CSR_TXT_TEST`而非`CSR_REPORT_TXT`底下的TXT，是因為目前轉換結果仍在修改)
 
@@ -43,3 +43,10 @@
 3.當該段落沒有"。"，判斷該段落並非句子將其刪除。
 
 4.將符合條件的段落中，以"。"為基準進行分段。
+
+
+##<h2> Result
+
+1.轉換結果將儲存於`Fin`資料夾底下
+
+2.於原本資料夾底下生成檔名為Conversion_ratio的xlsx，裡面紀錄文字的轉換率

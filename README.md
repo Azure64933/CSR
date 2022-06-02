@@ -8,7 +8,7 @@
 此專案將各個企業的"企業社會責任報告書"轉成Combine以及Segment兩個部分。
 
 
-##<h2> Getting started
+## <h2> Getting started
 
 將code clone之後，執行main便會將`CSR_TXT_TEST`中所有的TXT檔案進行轉換。(之所以會是`CSR_TXT_TEST`而非`CSR_REPORT_TXT`底下的TXT，是因為目前轉換結果仍在修改)
 
@@ -29,7 +29,9 @@
 
 ## Segment
 
-由於"企業社會責任報告書"中有許多表格數據，在透過`cogs/combine.py`將斷句接上後，這些表格數據無法進行文字分析，於是將其刪除。以及將剛接好的句子重新分段。
+由於合併判斷基準(2)會導致部分句子無法Combine，因此會重新Combine一次。
+
+"企業社會責任報告書"中有許多表格數據，這些表格數據無法進行文字分析，於是將其刪除。
 
 本專案透過`cogs/segment.py`將`Fin/Combine/`中的句子重新分為不同段落。
 
@@ -45,7 +47,7 @@
 4.將符合條件的段落中，以"。"為基準進行分段。
 
 
-##<h2> Result
+## <h2> Result
 
 1.轉換結果將儲存於`Fin`資料夾底下
 

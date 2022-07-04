@@ -1,33 +1,62 @@
 # CSR
+CSR全名為（Corporate Social Responsibility)，意旨企業社會責任。
 
-此專案為個人練習專案。
+## Table of Contents
+- [Introduce](#Introduce)
+	- [The purpose](#The-purpose)
+	- [Pre-preparation](#Pre-preparation)
+	- [Result](#Result)
+- [Getting started](#Getting-started)
+	- [main](#main)
+	- [Combine](#Combine)
+	- [Segment](#Segment)
 
-此專案的目的是將CSR轉化成可以進行文字分析的檔案。
+## Introduce
 
-企業社會責任（Corporate Social Responsibility, 簡稱CSR）
-此專案將各個企業的"企業社會責任報告書"轉成Combine以及Segment兩個部分。
+### The purpose
+此專案的目的是將純文字檔(.txt)轉譯可以進行語意分析的檔案。
 
+### Pre-preparation
+1. 蒐集純文字檔(.txt):
+
+此專案蒐集自民國99年至今、不同公司的CSR報告書。由於一般CSR報告書為pdf檔，因此須將pdf檔轉檔成txt檔才能進行後續的語意分析。
+
+2. 存放資料：
+
+將資料存放於`CSR_REPORT_TXT/`檔案路徑底下。可在`CSR_REPORT_TXT/`底下存放多個資料夾。
+
+### Result
+-  Combine
+將所有句子接上的`"FileName"_Comb`儲存於`Fin/Combine/`
+
+- Segment
+將`"FileName"_Comb`切割後的`"FileName"_Seg`儲存於`Fin/Segment/`
+
+- Excel
+有Comb/TXT, Segm/TXT, Segm/Comb三種比例，可以確認純文字檔(.txt)經過處理後剩餘的文字比例。
 
 ## <h2> Getting started
+### main
+預設為執行`CSR_REPORT_TXT/`檔案路徑底下的`109_txt`資料夾。
 
-將code clone之後，執行main便會將`CSR_TXT_TEST`中所有的TXT檔案進行轉換。(之所以會是`CSR_TXT_TEST`而非`CSR_REPORT_TXT`底下的TXT，是因為目前轉換結果仍在修改)
+可透過修改下列的`109_txt`更改選擇執行的資料夾。
 
-轉換過後的結果將儲存在Fin資料夾底下，分別為Combine以及Segment兩個部分。
+```
+main("109_txt")
+```
 
-## Combine
+### Combine
 
 大部分的"企業社會責任報告書"是PPT，將PPT轉成純文字後會導致句子有許多不合理的斷句。
 
 本專案透過`cogs/combine.py`將斷句接上。
 
-### 合併判斷基準：
+#### 合併判斷基準：
+- 當段落中有spe_str中的特殊符號時，便判斷該段落為句子，將該段落與下一段落進行合併。
 
-1.當段落中有spe_str中的特殊符號時，便判斷該段落為句子，將該段落與下一段落進行合併。
+- 當該段落的結尾有"。"、"！"、"？"三種符號時，判斷該段落為一段話的結尾，進行換行的動作。
 
-2.當該段落的結尾有"。"、"！"、"？"三種符號時，判斷該段落為一段話的結尾，進行換行的動作。
-
-
-## Segment
+### Segment
 
 由於合併判斷基準(2)會導致部分句子無法Combine，因此會重新Combine一次。
 
@@ -36,19 +65,17 @@
 本專案透過`cogs/segment.py`將`Fin/Combine/`中的句子重新分為不同段落。
 
 
-### 分段判斷基準：
+#### 分段判斷基準：
+- 當段落中"."的數量超過六個，判斷為目錄將其刪除。
 
-1.當段落中"."的數量超過六個，判斷為目錄將其刪除。
+- 當段落中字數少於12個，判斷該段落並非句子將其刪除。
 
-2.當段落中字數少於12個，判斷該段落並非句子將其刪除。
+- 當該段落沒有"。"，判斷該段落並非句子將其刪除。
 
-3.當該段落沒有"。"，判斷該段落並非句子將其刪除。
-
-4.將符合條件的段落中，以"。"為基準進行分段。
+- 將符合條件的段落中，以"。"為基準進行分段。
 
 
 ## <h2> Result
+- 轉換結果將儲存於`Fin/`資料夾底下
 
-1.轉換結果將儲存於`Fin`資料夾底下
-
-2.於原本資料夾底下生成檔名為Conversion_ratio的xlsx，裡面紀錄文字的轉換率
+- 於檔案路徑底下生成Excel檔，裡面紀錄文字的轉換率

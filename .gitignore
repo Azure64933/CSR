@@ -11,5 +11,4 @@ ignore_test.py
 tempCodeRunnerFile.py
 
 # 忽略 Fin底下的Combine,Segment 檔案
-Fin/Combine
-Fin/Segment
+Fin_Ignore

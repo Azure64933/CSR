@@ -34,13 +34,6 @@ def get_position(s, c):
     return lst
 
 
-def char_isSame(c1, c2):
-    if c1.isalpha() and c2.isalpha():
-        return True
-    else:
-        return False
-
-
 def get_space_index(sentence):
     s = sentence
     # 取得字串中空格的位置

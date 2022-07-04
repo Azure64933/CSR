@@ -1,6 +1,5 @@
 from pathlib import Path
 import re
-from . import merge, deal_string
 
 
 def openFile(fileName, filePath):

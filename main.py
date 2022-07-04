@@ -74,4 +74,4 @@ def main(selectedFile):
         original_word, seg_word), cal_list(comb_word, seg_word), selectedFile)
 
 
-main("100_txt")
+main("99_txt")

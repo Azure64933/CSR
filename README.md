@@ -5,7 +5,7 @@ CSR全名為（Corporate Social Responsibility)，意旨企業社會責任。
 - [Introduce](#Introduce)
 	- [The purpose](#The-purpose)
 	- [Pre-preparation](#Pre-preparation)
-	- [Result](#Result)
+	- [Finish](#Finish)
 - [Getting started](#Getting-started)
 	- [main](#main)
 	- [Combine](#Combine)
@@ -26,7 +26,7 @@ CSR全名為（Corporate Social Responsibility)，意旨企業社會責任。
 
 將資料存放於`CSR_REPORT_TXT/`檔案路徑底下。可在`CSR_REPORT_TXT/`底下存放多個資料夾。
 
-### Result
+### Finish
 -  Combine
 將所有句子接上的`"FileName"_Comb`儲存於`Fin/Combine/`
 

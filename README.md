@@ -12,7 +12,7 @@ CSR全名為（Corporate Social Responsibility)，意旨企業社會責任。
 	- [Segment](#Segment)
 - [Result](#Result)
 
-## <h2> Introduce 
+## Introduce 
 
 ### The purpose
 此專案的目的是將純文字檔(.txt)轉譯可以進行語意分析的檔案。
@@ -36,7 +36,7 @@ CSR全名為（Corporate Social Responsibility)，意旨企業社會責任。
 - Excel
 有Comb/TXT, Segm/TXT, Segm/Comb三種比例，可以確認純文字檔(.txt)經過處理後剩餘的文字比例。
 
-## <h2> Getting started
+## Getting started
 ### main
 
 ----------
@@ -84,7 +84,7 @@ main("109_txt")
 - 將符合條件的段落中，以"。"為基準進行分段。
 
 
-## <h2> Result
+## Result
 - 原始文章完整：
 Excel中 Segm/TXT, Segm/Comb兩個欄位的值通常會有4成到7成的成果。
 

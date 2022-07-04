@@ -10,5 +10,5 @@ ignore_test.py
 #執行錯誤時會跑出來的檔案
 tempCodeRunnerFile.py
 
-# 忽略 Fin底下的Combine,Segment 檔案
+# 忽略 Fin_Ignore 檔案
 Fin_Ignore

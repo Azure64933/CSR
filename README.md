@@ -1,7 +1,7 @@
-# CSR
+# <h1> CSR 
 CSR全名為（Corporate Social Responsibility)，意旨企業社會責任。
 
-## Table of Contents
+## <h2> Table of Contents </h2>
 - [Introduce](#Introduce)
 	- [The purpose](#The-purpose)
 	- [Pre-preparation](#Pre-preparation)
@@ -10,8 +10,9 @@ CSR全名為（Corporate Social Responsibility)，意旨企業社會責任。
 	- [main](#main)
 	- [Combine](#Combine)
 	- [Segment](#Segment)
+- [Result](#Result)
 
-## Introduce
+## <h2> Introduce 
 
 ### The purpose
 此專案的目的是將純文字檔(.txt)轉譯可以進行語意分析的檔案。
@@ -37,6 +38,9 @@ CSR全名為（Corporate Social Responsibility)，意旨企業社會責任。
 
 ## <h2> Getting started
 ### main
+
+----------
+
 預設為執行`CSR_REPORT_TXT/`檔案路徑底下的`109_txt`資料夾。
 
 可透過修改下列的`109_txt`更改選擇執行的資料夾。
@@ -47,16 +51,21 @@ main("109_txt")
 
 ### Combine
 
+----------
+
 大部分的"企業社會責任報告書"是PPT，將PPT轉成純文字後會導致句子有許多不合理的斷句。
 
 本專案透過`cogs/combine.py`將斷句接上。
 
-#### 合併判斷基準：
+##### 合併判斷基準：
 - 當段落中有spe_str中的特殊符號時，便判斷該段落為句子，將該段落與下一段落進行合併。
 
 - 當該段落的結尾有"。"、"！"、"？"三種符號時，判斷該段落為一段話的結尾，進行換行的動作。
 
 ### Segment
+
+----------
+
 
 由於合併判斷基準(2)會導致部分句子無法Combine，因此會重新Combine一次。
 
@@ -65,7 +74,7 @@ main("109_txt")
 本專案透過`cogs/segment.py`將`Fin/Combine/`中的句子重新分為不同段落。
 
 
-#### 分段判斷基準：
+##### 分段判斷基準：
 - 當段落中"."的數量超過六個，判斷為目錄將其刪除。
 
 - 當段落中字數少於12個，判斷該段落並非句子將其刪除。
@@ -76,6 +85,10 @@ main("109_txt")
 
 
 ## <h2> Result
-- 轉換結果將儲存於`Fin/`資料夾底下
+- 原始文章完整：
+Excel中 Segm/TXT, Segm/Comb兩個欄位的值通常會有4成到7成的成果。
 
-- 於檔案路徑底下生成Excel檔，裡面紀錄文字的轉換率
+- 原始文章缺損：
+原始文章可能為空值或亂碼，Excel中 Segm/TXT, Segm/Comb兩個欄位的值趨近0。
+
+
